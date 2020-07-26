@@ -32,6 +32,35 @@
         arr.push("X");
         console.log(arr);
     }
+    
+    /* Задание 1 урока №4 */
+    let num = +prompt("Введите число от 0 до 999");
+
+    class objNum {
+        constructor(units, tens, hundreds) {
+            this.units = units;
+            this.tens = tens;
+            this.hundreds = hundreds;
+        }
+    }
+
+    let units = null;
+    let tens = null;
+    let hundreds = null;
+
+    if (num <= 9 && num > 0) {
+        units = num;
+    } else if (num <= 999 && num > 0) {
+        units = Math.floor(num % 10);
+        tens = Math.floor(num / 10 % 10);
+        hundreds = Math.floor(num / 100 % 10);
+    } else {
+        console.log('Вы ввели число за диапазоном 0 - 999');
+    }
+
+    const num1 = new objNum(units, tens,  hundreds);
+
+    console.log(num1);
 
 </script>
 </body>
